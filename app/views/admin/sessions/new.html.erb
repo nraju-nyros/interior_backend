@@ -1,0 +1,108 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<div class="curtain role-temp" data-action-name="login" data-controller-name="users">
+  <div class="curtain-top-bar">
+    <div class="logo full">
+    <a href="/admin"><img class="navbar-brand" src="/assets/login_logo-87a1e75815a9dd16752194e39c9210efe554092027ba26dabb3c72358bd0394f.svg"></a>
+    </div>
+    <div class="curtain-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="curtain-menu menu-hidden">
+    <ul><li class="nav-float-right login-signup">
+     </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container" >
+  <div class="form-horizontal no-border form u-dimension-2"  style ="margin-top: 80px; width: 450px; padding-bottom: 100px;"align="center" >
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+     <h2 align="center">Sign in </h2>
+      
+       <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <% end %>  
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <%= f.label :email %>
+           <span class="err"><%= resource.errors[:email].join('. ') %></span><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",class: 'form-control'%>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <%= f.label :password %>
+           <span class="err"><%= resource.errors[:password].join('. ') %></span><br />
+          <%= f.password_field :password, autocomplete: "current-password",class: 'form-control'%>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+          <div class="col-sm-12">
+        <%= f.submit "Log in", class: 'submitBtn btn btn-block btn-success btn register-submit', id: 'modal-submit', style:"background-color: #1c2233 !important;
+                              border-color: #1c2233 !important;
+                         margin-top: 20px;
+                     padding: 10px;" %>
+      </div>
+      </div>
+      
+      <div class="clearfix" style="width: 350px;">
+         <%= f.check_box :remember_me %> 
+         <%= f.label :remember_me %>
+            <%= link_to "Forgot password?", new_admin_session_path, :class => 'forgot_pwd'%>
+      </div>
+     
+
+
+  
+    <% end %>
+    
+  </div>
+
+</div> 
+
+
+
+<style type="text/css">
+  .form-group{
+    width:356px;
+  }
+
+  .form{
+  
+
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .col-sm-12{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  
+
+  #user_remember_me{  
+    margin-right:0px;
+  }
+  .forgot_pwd{
+    padding-left: 90px;
+  }
+
+  a:hover{
+      text-decoration-line: none;
+
+  }
+
+  #flash_alert{
+    color: red;
+  }
+</style>

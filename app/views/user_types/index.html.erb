@@ -1,0 +1,18 @@
+  <div>
+      	 <b>Required room types: &nbsp;&nbsp;&nbsp;&nbsp;</b>
+      	 <div>
+       <% @user_requirement.user_room_types.each do|p|%>
+     
+
+           <div class="rooms_render">
+     	<button class="button_image" data-automated-test="styleQuizChoiceBubble" type="button">
+     		<div class="room_images">
+     			 <%= image_tag(p.name, :class => 'user_image room_images1') %></div>
+     			<h3 class="room_name"><%= p.content %></h3>
+     			</button>
+     </div>
+       
+      <% end %> 
+  </div>
+
+     </div>

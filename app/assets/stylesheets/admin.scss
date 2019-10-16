@@ -1,0 +1,365 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form {
+		margin: 0 auto;
+		width: 470px;
+		background-color: white;
+		padding-left: 0px;
+	}
+
+
+	.form input{
+		margin-right: 180px;
+	}
+
+	.err {
+	color: red;
+	font-size: 14px;
+	}
+
+	#flash_alert{
+	color: red;
+	font-size: 14px;
+	}
+
+
+
+
+
+
+
+#form_email{
+	margin-left: 23px;
+}
+
+
+
+#sign_in_from{
+	margin-left: 400px;
+}
+
+/*.new_user{
+	margin-top: 100px;
+}*/
+
+.form1 {
+  margin: 0 auto;
+  width: 470px;
+  background-color: white;
+  padding-left: 0px;
+}
+
+.form1 label {
+    display: inline-block;
+    text-align: right;
+     
+}
+
+.modal_form{
+	margin-top: 0px;
+}
+
+.homepage_dish{
+    height: 100%;
+    width: 50%;
+    position:fixed;
+  }
+  
+  .login{
+    padding-right: 20px;
+    color:#0066ff;
+    font-size: 20.3px;
+    line-height: 1.44359;
+    border: 0px;
+    font-weight:700;
+
+
+  }
+
+  .login a:hover{
+
+  }
+
+  .signup{
+    padding-right: 100px;
+      color:#0066ff;
+    
+    font-size: 20.3px;
+    line-height: 1.44359;
+    border: 0px;
+      font-weight:700;
+
+
+  }
+
+  .top-left {
+  position: absolute;
+  top:450px;
+  left:10px;
+  color: #f79b9b;
+  font-size: 50px;
+  font-weight: 900;
+
+}
+
+ .top-left:hover{
+  color: #f79b9b;
+}
+
+.bottom-right {
+
+}
+.bottom_img{
+  width: 300px;
+  height: 300px;
+}
+.main_header{
+  font-weight: 800;
+  font-size:40px;
+  color: black;
+}
+
+a:hover{
+  text-decoration-line: none;
+  
+}
+
+.u-dimension-2 {
+    box-shadow: 0 0 0 1px rgba(67,41,163,.1), 0 1px 8px 0 rgba(67,41,163,.1);
+}
+
+.form label {
+    display: inline-block;
+    text-align: right;
+    float: left;
+}
+
+
+.curtain {
+    font-family: Sailec-Regular,sans-serif;
+    font-weight: 400!important;
+    background: #fff;
+
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    height: 55px;
+    top: 0;
+    width: 100%;
+    z-index: 100020;
+}
+
+.curtain .curtain-top-bar {
+    
+    box-shadow: none;
+    float: left;
+    position: relative;
+    width: auto;
+}
+
+.curtain .curtain-top-bar {
+    background-color: #fff;
+   
+    display: block;
+    height: 55px;
+ 
+    text-align: right;
+   
+    -o-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+   
+    z-index: 100021;
+}
+
+.curtain.role-temp .logo.full {
+    display: block;
+}
+
+.curtain .curtain-top-bar .logo.full {
+ 
+    padding: 18px 14px 0 20px;
+    }
+
+    .curtain .curtain-top-bar .logo {
+    float: left;
+    position: relative;
+    z-index: 100024;
+}
+
+.curtain .curtain-top-bar .logo a {
+    display: block;
+    float: left;
+}
+
+.curtain .curtain-top-bar .logo a img {
+    display: block;
+}
+
+.curtain .curtain-menu {
+    background: hsla(0,0%,100%,0);
+    /* line-height: 1; */
+    /* list-style: none; */
+    margin: 0;
+    overflow-y: visible;
+    padding: 0;
+    position: relative;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+
+.curtain .curtain-menu>ul>li.nav-float-right {
+    float: right;
+    position: relative;
+    padding-right: 20px;
+}
+
+.curtain.role-temp ul li a {
+    font-family: Sailec-Light,sans-serif;
+    font-weight: 400!important;
+    font-size: 13px;
+    color: #1c2233;
+}
+
+.curtain .curtain-menu>ul>li a {
+    display: inline-block;
+    padding-bottom: 17px;
+    padding-top: 20px;
+
+}
+
+.curtain li {
+    list-style-type: none;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.5);
+        padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.nav-link{
+	display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+a {
+  
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+	text-decoration: none;
+}
+li {
+    list-style-type: none;
+}
+
+.mr-auto{
+    margin-right: 200px;
+}
+
+.user_image1{
+	height: 210px;
+	width: 210px;
+	margin-bottom: 15px;
+	margin-right: 15px;
+}
+
+.user_image{
+	height: 100px;
+	width: 100px;
+	
+}
+
+.back_btn{
+	text-align: center;									
+}
+
+
+
+
+.rooms_render {
+  animation: rSmX2smJgdvTcoBhbAtyQ .45s ease;
+  display: block;
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  height: 150px;
+  opacity: 1;
+  padding: 0 12px 24px;
+  width: 150px;
+}
+
+.button_image {
+  -webkit-appearance: none;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  letter-spacing: 0;
+  list-style-type: none;
+  margin: 0;
+ 
+  text-align: left;
+  text-transform: none;
+  vertical-align: baseline;
+  background: #f6f6f6;
+  border-radius: 50%;
+  display: block;
+  height: 100%;
+  padding: 12px;
+  position: relative;
+  width: 100%;
+}
+
+.button_image:hover {
+  box-shadow: 0 7px 20px rgba(0,0,0,.1);
+  transform: scale(1.04);
+  outline: none;
+}
+
+.room_images {
+  -webkit-box-align: center;
+
+  align-items: center;
+
+  display: flex;
+  height: 45px;
+  -webkit-box-pack: center;
+
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  width: 45px;
+}
+
+.room_images1 {
+  display: block;
+  -webkit-box-flex: 0;
+  vertical-align: middle;
+  flex: 0 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+  align-items: center;
+  transition: opacity .15s ease-in-out;
+}
+
+.room_name {
+  font-family: GT Walsheim;
+  font-weight: 400!important;
+  color: #000;
+  font-size: 14px;
+  margin: 10px 0 0;
+  text-align: center;
+}
+
