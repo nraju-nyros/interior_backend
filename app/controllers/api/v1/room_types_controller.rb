@@ -55,10 +55,4 @@ class Api::V1::RoomTypesController < ApplicationController
     params.require(:roomtype).permit(:name, :image)   
   end   
   
- 
-
- 
-
-  
-   
 end  

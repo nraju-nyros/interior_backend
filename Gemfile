@@ -92,6 +92,3 @@ gem 'delayed_job_active_record'
 
 #file upload and saves in folder
 gem 'carrierwave'
-
-gem 'nyros_form'
-gem 'nyros_form3'
