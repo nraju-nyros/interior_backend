@@ -1,19 +1,17 @@
 class Api::V1::UserRoomTypesController < ApplicationController
   def index
     @rooms = UserRoomType.all
-   
-     render json: @rooms , status: :ok
-    # binding.pry
+    render json: @rooms , status: :ok
   end
  
   def show
-     @user_roomtype = UserRoomType.find(params[:id])
-     render json: @user_roomtype , status: :ok
+    @user_roomtype = UserRoomType.find(params[:id])
+    render json: @user_roomtype , status: :ok
   end
  
   def new   
-     @user_roomtype = UserRoomType.new(user_room_type_params)
-     rende json: @user_roomtype 
+    @user_roomtype = UserRoomType.new(user_room_type_params)
+    rende json: @user_roomtype 
   end   
    
   def create   
@@ -21,15 +19,14 @@ class Api::V1::UserRoomTypesController < ApplicationController
     if @user_roomtype.save  
      render json: @user_roomtype , status: :created, location: api_v1_users_url(@user_roomtype) 
     else   
-       render json: @user_roomtype.errors, status: :unprocessable_entity
+      render json: @user_roomtype.errors, status: :unprocessable_entity
     end   
   end  
 
 
   def edit 
     @user_roomtype = UserRoomType.find(params[:id]) 
-      render json: @user_roomtype
-
+    render json: @user_roomtype
   end 
    
   def update   

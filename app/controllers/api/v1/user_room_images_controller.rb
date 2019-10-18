@@ -14,15 +14,7 @@ class Api::V1::UserRoomImagesController < ApplicationController
     rende json: @user_room_image 
   end   
    
-  # def create   
-  #   binding.pry
-  #   @user_room_image = UserRoomImage.new(user_room_image_params)   
-  #   if @user_room_image.save  
-  #    render json: @user_room_image , status: :created, location: api_v1_users_url(@user_room_image) 
-  #   else   
-  #      render json: @user_room_image.errors, status: :unprocessable_entity
-  #   end   
-  # end  
+ 
 
   def create    
     @user_room_image = UserRoomImage.new

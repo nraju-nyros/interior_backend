@@ -184,9 +184,6 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
-    nyros_form (0.1.6)
-    nyros_form3 (0.1.2)
-      rails (~> 5.2.3)
     orm_adapter (0.5.0)
     polyamorous (2.3.0)
       activerecord (>= 5.0)
@@ -329,8 +326,6 @@ DEPENDENCIES
   knock
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
-  nyros_form
-  nyros_form3
   pry
   puma (~> 3.11)
   rack-cors

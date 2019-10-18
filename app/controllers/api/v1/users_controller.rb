@@ -1,6 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  # before_action :authorize_request, except: :create
-  # before_action :find_user, except: %i[create index]
+  
 
   # GET /users
   def index
@@ -20,7 +19,7 @@ class Api::V1::UsersController < ApplicationController
       render json: @user, status: :created
     else
       render json: { errors: @user.errors.full_messages },
-             status: :unprocessable_entity
+        status: :unprocessable_entity
     end
   end
 

@@ -1,7 +1,7 @@
  
 class Api::V1::PasswordsController < ApplicationController
 
-	def forgot
+  def forgot
     if params[:email].blank? 
       return render json: {error: 'Email not present'}
     end
@@ -10,8 +10,6 @@ class Api::V1::PasswordsController < ApplicationController
 
     if @user.present?
      @user.generate_password_token! #generate pass token
-
-    # UserMailer.forgot_password(@user).deliver!
       SendMailJob.set(wait: 0.seconds).perform_later @user
       render json: {status: 'ok'}, status: :ok
     else
@@ -20,9 +18,7 @@ class Api::V1::PasswordsController < ApplicationController
   end
 
   def reset
-
     token = params[:reset_password_token].to_s
-
     if params[:reset_password_token].blank?
       return render json: {error: 'Token not present'}
     end
@@ -38,28 +34,24 @@ class Api::V1::PasswordsController < ApplicationController
     else
       render json: {error:  ['Link not valid or expired. Try generating a new link.']}, status: :not_found
     end
-
   end
 
 
   def update
-     token = params[:reset_password_token].to_s
-     @user = User.find_by(reset_password_token: token)
-     
-  if !params[:password].present?
-    render json: {error: 'Password not present'}, status: :unprocessable_entity
-    return
-  end
- 
-  if params[:password].present?
+    token = params[:reset_password_token].to_s
     @user = User.find_by(reset_password_token: token)
-    @user.password =params[:password]
-    @user.save
-  else
-    render json: {errors: current_user.errors.full_messages}, status: :unprocessable_entity
+     
+    if !params[:password].present?
+      render json: {error: 'Password not present'}, status: :unprocessable_entity
+      return
+    end
+   
+    if params[:password].present?
+      @user = User.find_by(reset_password_token: token)
+      @user.password =params[:password]
+      @user.save
+    else
+      render json: {errors: current_user.errors.full_messages}, status: :unprocessable_entity
+    end
   end
-end
-
-
-
 end

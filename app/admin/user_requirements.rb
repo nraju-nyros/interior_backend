@@ -1,14 +1,5 @@
 ActiveAdmin.register UserRequirement do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :name, :email, :user_type, :user_id
-  #
-  # or
-  #
   permit_params do
     permitted = [:name, :email, :user_type, :user_id]
     permitted << :other if params[:action] == 'create' && current_user.admin?
@@ -16,15 +7,6 @@ ActiveAdmin.register UserRequirement do
   end
 
 
-   
-
-
-  #    div do
-  #      user_requirement.user_room_images do |u|
-  #       u.name
-  #      end
-  #   end
-  # end
   index do
     selectable_column
     column :id
@@ -54,22 +36,17 @@ ActiveAdmin.register UserRequirement do
         user_requirement.user.email
       end
       row :user_type
-
-       row :user_room_types do  |user_requirement|
-       
-        user_requirement.user_room_types.pluck(:content).join(', ')
-      end
-
-
-    
     end
 
     attributes_table_for user_requirement.user_room_images do
-       h4 b "User Room Images"
+      h4 b "User Room Images"
       user_requirement.user_room_images.each do |img|
         span do
-  
-          img src: "/uploads/room_image/"+ img.name,:class => 'user_image'
+          if img.room_image.present?
+            image_tag img.room_image.name_url, class: 'user_image'
+          else
+            image_tag "default.jpg"
+          end
         end
       end     
     end
@@ -77,26 +54,31 @@ ActiveAdmin.register UserRequirement do
    
     attributes_table_for user_requirement.user_room_types do
       h4 b "User Room Types"
-        
         div(:class => "rooms_list1") do 
           user_requirement.user_room_types.each do |img|
-        
+
             div(:class => "rooms_types1") do
-         
-               img src: "/uploads/room_type/"+ img.name,:class => 'user_type'
+              if img.room_type.present?
+                image_tag img.room_type.image_url, class: 'user_type'  
+              else
+                image_tag "default.jpg"
+              end
             end
 
             span(:class => "room_name") do
-              img.content
+              if img.room_type.present?
+                img.room_type.name
+              else
+                ""
+              end
             end 
           end  
         end
     end
 
-      div class: 'back' do 
-        link_to "Back", admin_user_requirements_path
-      end
+    div class: 'back' do 
+      link_to "Back", admin_user_requirements_path
+    end
 
   end
-  
 end

@@ -1,14 +1,5 @@
 ActiveAdmin.register RoomImage do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :name
-  #
-  # or
-  #
   permit_params do
     permitted = [:name]
     permitted << :other if params[:action] == 'create'
@@ -19,8 +10,7 @@ ActiveAdmin.register RoomImage do
     selectable_column
     column :id
     column "Image" do |product|
-              image_tag product.name_url, class: 'my_image_size'
-
+      image_tag product.name_url, class: 'my_image_size'
     end
     column :Actions do |room_image|
       links = link_to "View", admin_room_image_path(room_image), :class => 'view' 
@@ -33,14 +23,13 @@ ActiveAdmin.register RoomImage do
   show do |room_image|
     attributes_table do
       row :id
-      
       row "Image" do |product|
-             image_tag product.name_url, class: 'user_image'
+        image_tag product.name_url, class: 'user_image'
       end
     end
     
     div class: 'back' do 
-        link_to "Back", admin_room_images_path
+      link_to "Back", admin_room_images_path
     end
   end
 end

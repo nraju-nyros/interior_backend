@@ -30,7 +30,6 @@ Rails.application.routes.draw do
       post 'passwords/forgot', to: 'passwords#forgot'
       get 'passwords/reset', to: 'passwords#reset'
       put 'passwords/update', to: 'passwords#update'
-
     end
   end
 end

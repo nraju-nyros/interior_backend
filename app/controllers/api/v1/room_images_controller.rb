@@ -1,18 +1,17 @@
 class Api::V1::RoomImagesController < ApplicationController
   def index
     @rooms = RoomImage.all
-     render json: @rooms , status: :ok
-    # binding.pry
+    render json: @rooms , status: :ok
   end
  
   def show
-     @roomimage = RoomImage.find(params[:id])
-     render json: @roomimage , status: :ok
+    @roomimage = RoomImage.find(params[:id])
+    render json: @roomimage , status: :ok
   end
  
   def new   
-     @roomimage = RoomImage.new(room_params)
-     rende json: @roomimage 
+    @roomimage = RoomImage.new(room_params)
+    rende json: @roomimage 
   end   
    
   def create   
@@ -20,15 +19,14 @@ class Api::V1::RoomImagesController < ApplicationController
     if @roomimage.save  
      render json: @roomimage , status: :created, location: api_v1_users_url(@roomimage) 
     else   
-       render json: @article.errors, status: :unprocessable_entity
+      render json: @article.errors, status: :unprocessable_entity
     end   
   end  
 
 
   def edit 
     @roomimage = RoomImage.find(params[:id]) 
-      render json: @roomimage
-
+    render json: @roomimage
   end 
    
   def update   
